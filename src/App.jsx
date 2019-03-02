@@ -1,20 +1,15 @@
 import React from 'react';
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      foo: 'bar'
-    };
-  }
+import { AppClass, AppClassHOC } from './AppClass';
+import { AppFunc, AppFunc2 } from './AppFunc';
 
-  render() {
-    const {
-      foo,
-    } = this.state;
+const App = () => (
+  <React.Fragment>
+    <AppClass />
+    <AppClassHOC />
+    <AppFunc />
+    <AppFunc2 />
+  </React.Fragment>
+);
 
-    return (
-      <h2>{foo}</h2>
-    );
-  }
-}
+export default App;

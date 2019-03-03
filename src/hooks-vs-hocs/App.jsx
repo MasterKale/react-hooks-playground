@@ -5,7 +5,6 @@ import { AppFunc, AppFunc2 } from './AppFunc';
 
 const App = () => (
   <React.Fragment>
-    <h1>Hooks vs HOCs</h1>
     <h2>Class Components:</h2>
     <AppClass />
     <AppClassHOC />

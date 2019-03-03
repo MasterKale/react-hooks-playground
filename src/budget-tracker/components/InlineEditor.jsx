@@ -17,6 +17,12 @@ const InlineEditor = (props) => {
 
   // Put focus on the input when it's visible
   const ref = useFocusInputOnRender();
+
+  // Flip over to the edit view when the formatted value is displayed
+  const onClickDisplay = () => {
+    setEditing(true);
+  };
+
   const onChangeValue = event => setNewVal(event.target.value);
 
   // Send the new value up to the parent
@@ -48,7 +54,7 @@ const InlineEditor = (props) => {
     );
   } else {
     const formatted = formatDisplay(value);
-    ui = <span className="valueDisplay" onClick={() => {setEditing(true)}}>{formatted}</span>;
+    ui = <span className="valueDisplay" onClick={onClickDisplay}>{formatted}</span>;
   }
 
   return ui;

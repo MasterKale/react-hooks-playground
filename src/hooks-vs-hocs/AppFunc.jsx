@@ -20,7 +20,7 @@ export const AppFunc = () => {
 
   return (
     <React.Fragment>
-      <h2>{foo} (x: {x}, y: {y})</h2>
+      <h3>{foo} (x: {x}, y: {y})</h3>
       <p>
         <button onClick={updateFoo}>Update</button>
       </p>
@@ -37,6 +37,6 @@ export const AppFunc2 = () => {
   } = clickPos;
 
   return (
-    <h2>User clicked at {x}, {y}</h2>
+    <h3>User clicked at {x}, {y}</h3>
   );
 };

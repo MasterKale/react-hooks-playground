@@ -40,7 +40,7 @@ export class AppClass extends React.Component {
 
     return (
       <React.Fragment>
-        <h2>{foo} (x: {x}, y: {y})</h2>
+        <h3>{foo} (x: {x}, y: {y})</h3>
         <p>
           <button onClick={this.updateFoo}>Update</button>
         </p>
@@ -77,7 +77,7 @@ class AppClass2 extends React.Component {
 
     return (
       <React.Fragment>
-        <h2>{foo} (x: {x}, y: {y})</h2>
+        <h3>{foo} (x: {x}, y: {y})</h3>
         <p>
           <button onClick={this.updateFoo}>Update</button>
         </p>

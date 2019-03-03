@@ -68,12 +68,8 @@ const getTransactions = (dispatch) => {
   * END METHODS
   */
 
-/**
- * START REDUCER
- */
-
 const AccountProvider = props => {
-  const [account = defaultValues, dispatch] = useReducer((state, action) => {
+  const [account, dispatch] = useReducer((state, action) => {
     const { payload } = action;
     switch(action.type) {
       case ACTION_TYPES.SET_ACCOUNT_NAME:

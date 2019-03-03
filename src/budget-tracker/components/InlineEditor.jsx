@@ -19,9 +19,16 @@ const InlineEditor = (props) => {
   const ref = useFocusInputOnRender();
   const onChangeValue = event => setNewVal(event.target.value);
 
-  const onDone = () => {
+  // Send the new value up to the parent
+  const onClickDone = () => {
     setEditing(false);
     onChange(newVal);
+  };
+
+  // Prevent the form from submitting. Catches Enter button too
+  const onSubmit = event => {
+    event.preventDefault();
+    onClickDone();
   };
 
   let ui;

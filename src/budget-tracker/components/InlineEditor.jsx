@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import './styles.css';
+import useFocusInputOnRender from '../hooks/useFocusInputOnRender';
 
 const InlineEditor = (props) => {
   const {
@@ -14,6 +15,8 @@ const InlineEditor = (props) => {
   const [editing, setEditing] = useState(false);
   const [newVal, setNewVal] = useState(value);
 
+  // Put focus on the input when it's visible
+  const ref = useFocusInputOnRender();
   const onChangeValue = event => setNewVal(event.target.value);
 
   const onDone = () => {
@@ -24,9 +27,16 @@ const InlineEditor = (props) => {
   let ui;
   if (editing) {
     ui = (
-      <form className="valueEdit">
-        <input type={type} id={name} name={name} value={newVal} onChange={onChangeValue} />
-        <button type="button" onClick={onDone}>Done</button>
+      <form className="valueEdit" onSubmit={onSubmit}>
+        <input
+          ref={ref}
+          type={type}
+          id={name}
+          name={name}
+          value={newVal}
+          onChange={onChangeValue}
+        />
+        <button type="button" onClick={onClickDone}>Done</button>
       </form>
     );
   } else {

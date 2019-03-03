@@ -1,0 +1,8 @@
+.valueEdit {
+  display: inline;
+}
+
+.valueDisplay {
+  cursor: pointer;
+  text-decoration: underline;
+}

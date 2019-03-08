@@ -3,39 +3,39 @@ import React from 'react';
 import withClickPos from './hocs/withClickPos';
 
 export class AppClass extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       foo: 'bar',
       x: 0,
-      y: 0,
+      y: 0
     };
 
     this.updateFoo = this.updateFoo.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
   }
 
-  componentDidMount() {
+  componentDidMount () {
     window.addEventListener('click', this.clickHandler);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     window.removeEventListener('click', this.clickHandler);
   }
 
-  updateFoo() {
+  updateFoo () {
     this.setState({ foo: Math.random() * 100 });
   }
 
-  clickHandler(event) {
+  clickHandler (event) {
     this.setState({ x: event.x, y: event.y });
   }
 
-  render() {
+  render () {
     const {
       foo,
       x,
-      y,
+      y
     } = this.state;
 
     return (
@@ -50,29 +50,29 @@ export class AppClass extends React.Component {
 }
 
 class AppClass2 extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
-      foo: 'bar',
+      foo: 'bar'
     };
 
     this.updateFoo = this.updateFoo.bind(this);
   }
 
-  updateFoo() {
+  updateFoo () {
     this.setState({ foo: Math.random() * 100 });
   }
 
-  render() {
+  render () {
     const {
-      foo,
+      foo
     } = this.state;
     const {
-      clickPos,
+      clickPos
     } = this.props;
     const {
       x,
-      y,
+      y
     } = clickPos;
 
     return (

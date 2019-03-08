@@ -1,39 +1,39 @@
 import React from 'react';
 
-function withClickPos(WrappedComponent) {
+function withClickPos (WrappedComponent) {
   return class extends React.PureComponent {
-    constructor(props) {
+    constructor (props) {
       super(props);
 
       this.state = {
         x: 0,
-        y: 0,
+        y: 0
       };
 
       this.clickHandler = this.clickHandler.bind(this);
     }
 
-    clickHandler(event) {
+    clickHandler (event) {
       this.setState({ x: event.x, y: event.y });
     }
 
-    componentDidMount() {
+    componentDidMount () {
       window.addEventListener('click', this.clickHandler);
     }
 
-    componentWillUnmount() {
+    componentWillUnmount () {
       window.removeEventListener('click', this.clickHandler);
     }
 
-    render() {
+    render () {
       const {
         x,
-        y,
+        y
       } = this.state;
 
-      return <WrappedComponent clickPos={{ x, y }} {...this.props} />
+      return <WrappedComponent clickPos={{ x, y }} {...this.props} />;
     }
-  }
-};
+  };
+}
 
 export default withClickPos;

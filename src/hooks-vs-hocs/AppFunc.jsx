@@ -11,11 +11,11 @@ export const AppFunc = () => {
   const clickPos = useClickPos();
 
   const {
-    foo,
+    foo
   } = state;
   const {
     x,
-    y,
+    y
   } = clickPos;
 
   return (
@@ -33,7 +33,7 @@ export const AppFunc2 = () => {
 
   const {
     x,
-    y,
+    y
   } = clickPos;
 
   return (

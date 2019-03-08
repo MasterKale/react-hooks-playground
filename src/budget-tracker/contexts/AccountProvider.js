@@ -6,7 +6,7 @@ const { Provider } = AccountContext;
 const defaultValues = {
   accountName: 'Default Account Name',
   transactions: [],
-  budget: 1000,
+  budget: 1000
 };
 
 const ACTION_TYPES = {
@@ -14,7 +14,7 @@ const ACTION_TYPES = {
   SET_TRANSACTIONS: 'setTransactions',
   ADD_TRANSACTION: 'addTransaction',
   REMOVE_TRANSACTION: 'removeTransaction',
-  SET_BUDGET: 'setBudget',
+  SET_BUDGET: 'setBudget'
 };
 
 /**
@@ -23,27 +23,27 @@ const ACTION_TYPES = {
 
 const setAccountNameAction = accountName => ({
   type: ACTION_TYPES.SET_ACCOUNT_NAME,
-  payload: { accountName },
+  payload: { accountName }
 });
 
 const setTransactionsAction = transactions => ({
   type: ACTION_TYPES.SET_TRANSACTIONS,
-  payload: { transactions },
+  payload: { transactions }
 });
 
 const addTransactionAction = transaction => ({
   type: ACTION_TYPES.ADD_TRANSACTION,
-  payload: { transaction },
+  payload: { transaction }
 });
 
 const removeTransactionAction = transaction => ({
   type: ACTION_TYPES.REMOVE_TRANSACTION,
-  payload: { transaction },
+  payload: { transaction }
 });
 
 const setBudgetAction = budget => ({
   type: ACTION_TYPES.SET_BUDGET,
-  payload: { budget },
+  payload: { budget }
 });
 
 /**
@@ -64,23 +64,23 @@ const getTransactions = (dispatch) => {
   });
 };
 
- /**
+/**
   * END METHODS
   */
 
 const AccountProvider = props => {
   const [account, dispatch] = useReducer((state, action) => {
     const { payload } = action;
-    switch(action.type) {
+    switch (action.type) {
       case ACTION_TYPES.SET_ACCOUNT_NAME:
         return {
           ...state,
-          accountName: payload.accountName,
+          accountName: payload.accountName
         };
       case ACTION_TYPES.SET_TRANSACTIONS:
         return {
           ...state,
-          transactions: payload.transactions,
+          transactions: payload.transactions
         };
       case ACTION_TYPES.ADD_TRANSACTION: {
         const { transactions } = state;
@@ -108,7 +108,7 @@ const AccountProvider = props => {
 
         return {
           ...state,
-          budget: newBudget,
+          budget: newBudget
         };
       }
       default:
@@ -126,8 +126,8 @@ const AccountProvider = props => {
           getTransactions: () => getTransactions(dispatch),
           addTransaction: transaction => dispatch(addTransactionAction(transaction)),
           removeTransaction: transaction => dispatch(removeTransactionAction(transaction)),
-          setBudget: budget => dispatch(setBudgetAction(budget)),
-        },
+          setBudget: budget => dispatch(setBudgetAction(budget))
+        }
       }}
     />
   );

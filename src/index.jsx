@@ -8,14 +8,14 @@ const Index = () => (
   <React.Fragment>
     <h1>Hooks vs HOCs</h1>
     <App1 />
-    <hr/>
+    <hr />
     <h1>Budget Tracker</h1>
     <App2 />
-    <hr/>
+    <hr />
   </React.Fragment>
 );
 
 ReactDOM.render(
   <Index />,
-  document.getElementById('app'),
+  document.getElementById('app')
 );

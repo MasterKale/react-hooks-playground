@@ -12,13 +12,13 @@ const Tracker = props => {
   const {
     accountName,
     transactions,
-    budget,
+    budget
   } = state;
 
   const {
     setAccountName,
     getTransactions,
-    setBudget,
+    setBudget
   } = dispatch;
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const Tracker = props => {
         <InlineEditor
           value={accountName}
           onChange={setAccountName}
-          name="name"
+          name='name'
         />
       </h2>
       <h3>
@@ -40,8 +40,8 @@ const Tracker = props => {
         <InlineEditor
           value={budget}
           onChange={setBudget}
-          name="budget"
-          type="number"
+          name='budget'
+          type='number'
           formatDisplay={formatBudget}
         />
       </h3>

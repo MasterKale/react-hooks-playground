@@ -9,7 +9,7 @@ const InlineEditor = (props) => {
     name,
     type = 'text',
     onChange,
-    formatDisplay = value => value,
+    formatDisplay = value => value
   } = props;
 
   const [editing, setEditing] = useState(false);
@@ -40,7 +40,7 @@ const InlineEditor = (props) => {
   let ui;
   if (editing) {
     ui = (
-      <form className="valueEdit" onSubmit={onSubmit}>
+      <form className='valueEdit' onSubmit={onSubmit}>
         <input
           ref={ref}
           type={type}
@@ -49,12 +49,12 @@ const InlineEditor = (props) => {
           value={newVal}
           onChange={onChangeValue}
         />
-        <button type="button" onClick={onClickDone}>Done</button>
+        <button type='button' onClick={onClickDone}>Done</button>
       </form>
     );
   } else {
     const formatted = formatDisplay(value);
-    ui = <span className="valueDisplay" onClick={onClickDisplay}>{formatted}</span>;
+    ui = <span className='valueDisplay' onClick={onClickDisplay}>{formatted}</span>;
   }
 
   return ui;

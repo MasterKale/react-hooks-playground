@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useDebugValue } from 'react';
 
 /**
  * Store the X and Y coordinates of where the user clicked
@@ -7,6 +7,9 @@ import { useState, useEffect } from 'react';
  */
 const useClickPos = () => {
   const [clickPos, setClickPos] = useState({ x: 0, y: 0 });
+
+  useDebugValue(`${clickPos.x},${clickPos.y}`);
+
   useEffect(() => {
     const clickHandler = (event) => {
       setClickPos({ x: event.x, y: event.y });

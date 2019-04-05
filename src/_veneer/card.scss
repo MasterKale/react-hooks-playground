@@ -1,0 +1,19 @@
+$shadow-color: rgba(5, 255, 159, 0.671);
+
+.card {
+  background: #05ffa1;
+  color: black;
+  padding: 8px 24px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin-bottom: 16px;
+
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 $shadow-color;
+  transition: 0.3s;
+
+  /* On mouse-over, add a deeper shadow */
+  &:hover {
+    box-shadow: 0 8px 12px 0 $shadow-color;
+  }
+}

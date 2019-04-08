@@ -5,7 +5,7 @@ import useClickPos from './hooks/useClickPos';
 export const AppFunc = () => {
   const [state, setState] = useState({ foo: 'bar' });
   const updateFoo = () => {
-    setState({ foo: Math.random() * 100 });
+    setState({ foo: (Math.random() * 100).toFixed(2) });
   };
 
   const clickPos = useClickPos();

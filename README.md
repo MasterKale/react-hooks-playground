@@ -1,7 +1,7 @@
 # React Hooks Playground
 
 ## Requirements
-- Node (see **.nvmrc**)
+- Node v10.15.2
 - Yarn
 
 ## Development
